@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matthew Sutcliffe · Engineering Portfolio</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='dist/output.css') }}">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <!-- Smooth scroll -->
+  <style>
+        html { scroll-behavior: smooth; }
+
+        @keyframes heroIn {
+            0% {
+            opacity: 0;
+            transform: translateY(20px);
+            filter: blur(6px);
+            }
+            100% {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+            }
+        }
+
+        .hero-animate {
+            animation: heroIn 0.9s ease-out forwards;
+        }
+
+        .delay-1 { animation-delay: .15s; opacity: 0; }
+        .delay-2 { animation-delay: .3s;  opacity: 0; }
+        .delay-3 { animation-delay: .45s; opacity: 0; }
+        .delay-4 { animation-delay: .6s;  opacity: 0; }
+
+        .nav-link {
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.5rem;
+        color: #334155; /* slate-700 */
+        transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+
+        /* Hover = low-opacity highlight */
+        .nav-link:hover {
+        background-color: rgba(15, 23, 42, 0.06); /* slate-900 @ ~6% */
+        }
+
+
+        /* Active section = strong highlight */
+        .nav-link.active {
+        background-color: #0f172a; /* slate-900 */
+        color: white;
+        }
+
+
+        /* Keep active strong even on hover */
+        .nav-link.active:hover {
+        background-color: #0f172a;
+        color: white;
+        }
+    </style>
+
+
+</head>
+
+<body class="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-900">
+  <!-- gray-800 to-gray-950 -->
+<!-- HERO OVERLAY (plays once, then disappears) -->
+    <!--
+    <section
+        id="hero"
+        class="min-h-screen flex items-center justify-center
+                bg-gradient-to-b from-slate-50 to-white">
+
+        <div class="mx-auto max-w-4xl px-6 text-center">
+            
+            <p class="hero-animate delay-1 text-sm font-medium text-slate-500">
+            Graduate Mechatronics Engineer
+            </p>
+
+            <h1 class="hero-animate delay-2 mt-4 text-5xl font-semibold tracking-tight text-slate-900">
+            Matthew Sutcliffe
+            </h1>
+
+            <p class="hero-animate delay-3 mt-6 text-lg leading-relaxed text-slate-600">
+            
+            </p>
+
+        <a href="#about"
+          class="hero-animate delay-4 mt-16 flex flex-col items-center gap-2 text-slate-500 hover:text-slate-700">
+
+          <span class="text-sm tracking-wide">
+            Scroll to see more
+          </span>
+
+          
+          <svg class="h-6 w-6 animate-bounce"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        --!>
+
+    
+    </section>
+  <!-- HERO / OPENING -->
+
+<section
+  id="hero"
+  class="min-h-screen flex items-center justify-center
+         bg-gradient-to-b from-gray-900 to-slate-950">
+
+  <div class="flex flex-col items-center">
+    <!-- Code block -->
+    <pre class="hero-code hero-animate delay-1"><code id="typewriter"></code></pre>
+
+    <pre class="hero-terminal"><code id="terminal"></code></pre>
+  </div>
+
+</section>
+
+
+
+ 
+<!-- Scroll-to header: appears when you reach it, then sticks -->
+  <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/75 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+        <a href="#top" class="font-semibold tracking-tight">Matthew Sutcliffe</a>
+
+        <nav id="nav" class="flex items-center gap-2 text-sm">
+            <a href="#about" class="nav-link px-3 py-2 rounded-lg">About</a>
+            <a href="#portfolio" class="nav-link px-3 py-2 rounded-lg">Portfolio</a>
+            <a href="#skills" class="nav-link px-3 py-2 rounded-lg">Skills</a>
+            <a href="#contact" class="nav-link px-3 py-2 rounded-lg">Contact</a>
+        </nav>
+    </div>
+  </header>
+  
+
+  <!-- ABOUT -->
+  <section id="about" class="scroll-mt-20 border-t border-slate-200/70">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+      <h2 class="text-3xl font-semibold tracking-tight">About</h2>
+      <p class="mt-4 max-w-3xl text-slate-600 leading-relaxed">
+        I am a highly motivated, enthusiastic, and reliable 4th engineering student seeking a career in 
+        mechatronics and robotics. Driven by a strong passion for robotics and mechatronics engineering, 
+        I am eager to contribute my skills and enthusiasm to real-world projects. I seek a challenging opportunity 
+        to apply and further develop my technical expertise, while gaining valuable industry experience and 
+        continuing to grow as an engineer.
+      </p>
+    </div>
+  </section>
+
+
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="scroll-mt-20 border-t border-slate-200/70">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+      <h2 class="text-3xl font-semibold tracking-tight">Portfolio</h2>
+      
+
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <article
+          class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition"
+        >
+          <a href="{{ url_for('ratbot') }}" class="block">
+            <img
+              src="{{ url_for('static', filename='images/ratbot/ratbot_1.png') }}"
+              alt="Ratbot preview"
+              class="aspect-video w-full rounded-xl object-cover"
+            >
+
+            <h3 class="mt-4 text-lg font-semibold group-hover:underline underline-offset-4">
+              Ratbot
+            </h3>
+
+            <p class="mt-2 text-sm text-slate-600">
+              Low-cost, sustainable, and unobtrusive tank driven robot for remote wildlife observation,
+              demonstrating autonomous mobility and intelligent audio-visual monitoring.
+            </p>
+
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs text-slate-700">Python</span>
+              <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs text-slate-700">SolidWorks</span>
+              <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs text-slate-700">Networking</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition">
+          <a href="{{ url_for('distortion_pedal') }}" class="block">
+            <img
+              src="{{ url_for('static', filename='images/distortion_pedal/pcb.png') }}"
+              alt="Distortion Pedal preview"
+              class="aspect-video w-full rounded-xl object-cover"
+            >
+            <h3 class="mt-4 text-lg font-semibold group-hover:underline underline-offset-4">
+              Distortion Pedal
+            </h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Distortion guitar pedal with custom circuit, PCB and enclosure design.
+            </p>
+
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs text-slate-700">Circuit Design</span>
+              <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs text-slate-700">PCB</span>
+              <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs text-slate-700">EasyEDA</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition">
+          <a href="{{ url_for('website') }}" class="block">
+            <img
+              src="{{ url_for('static', filename='images/webhosting/temp.webp') }}"
+              alt="Self hosted website preview"
+              class="aspect-video w-full rounded-xl object-cover"
+            >
+            <h3 class="mt-4 text-lg font-semibold group-hover:underline underline-offset-4">
+              Self hosted website
+            </h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Creating a website and hosting it on a Raspberry Pi.
+            </p>
+
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs text-slate-700">Flask</span>
+              <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs text-slate-700">Linux</span>
+              <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs text-slate-700">Networking</span>
+            </div>
+          </a>
+        </article>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="scroll-mt-20 border-t border-slate-200/70">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+      <h2 class="text-3xl font-semibold tracking-tight">Skills</h2>
+
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold text-slate-900">Software</h3>
+
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Python</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">C/C++</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">ROS 2</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Linux</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Git</span>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold text-slate-900">Electrical</h3>
+
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">PCB Design</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Sensors</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Power</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Bring-up</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Testing</span>
+          </div>
+        </div>
+
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold text-slate-900">Mechanical</h3>
+
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">CAD</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Manufacturing</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">DFMA</span>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Prototyping</span>
+          </div>
+        </div>
+    </div>
+  </section>
+
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="scroll-mt-20 border-t border-slate-200/70">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+      <h2 class="text-3xl font-semibold tracking-tight">Contact</h2>
+      <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm max-w-xl">
+        <ul class="space-y-3 text-slate-700">
+          <li>Email: <a class="text-slate-900 underline underline-offset-4" href="mailto:you@email.com">msutcliffe1324@gmail.com</a></li>
+          <li>LinkedIn: <a class="text-slate-900 underline underline-offset-4" href="#">your-link</a></li>
+          <li>GitHub: <a class="text-slate-900 underline underline-offset-4" href="#">your-username</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-200/70 py-10 text-center text-sm text-slate-500">
+    © <span id="year"></span> Mstthew Sutcliffe
+  </footer>
+
+
+  
+  <script>
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+  
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+  
+            navLinks.forEach(link => {
+              link.classList.toggle(
+                "active",
+                link.getAttribute("href") === `#${id}`
+              );
+            });
+          }
+        });
+      },
+      {
+        rootMargin: "-40% 0px -50% 0px",
+        threshold: 0
+      }
+    );
+  
+    sections.forEach(section => observer.observe(section));
+  </script>
+  <script>
+// ===== CODE CONTENT (with spans already applied) =====
+const codeHTML = `
+<span class="tok-kw">from</span> monash_university <span class="tok-kw">import</span> mechatronics_engineering
+
+<span class="tok-kw">class</span> <span class="tok-cls">Engineer</span><span class="tok-bracket">:</span>
+    <span class="tok-kw">def</span> <span class="tok-def">__init__</span><span class="tok-bracket">(</span><span class="tok-self">self</span><span class="tok-bracket">)</span><span class="tok-bracket">:</span>
+        <span class="tok-self">self</span>.name = <span class="tok-str tok-str-emph">"Matthew Sutcliffe"</span>
+        <span class="tok-self">self</span>.focus = <span class="tok-str tok-str-emph">"Robotics &amp; Mechatronics"</span>
+
+<span class="tok-kw">if</span> __name__ == <span class="tok-str">"__main__"</span><span class="tok-bracket">:</span>
+    <span class="tok-def">Engineer</span><span class="tok-bracket">(</span><span class="tok-bracket">)</span>
+`.trim();
+
+// ===== TERMINAL COMMAND =====
+const cmdText = "py portfolio.py --scroll-to-view ↓↓↓";
+
+// ===== TARGETS =====
+const codeTarget = document.getElementById("typewriter");
+const termTarget = document.getElementById("terminal");
+
+// cursors visible from start
+codeTarget.innerHTML = `<span class="cursor">|</span>`;
+termTarget.innerHTML = `> <span class="cursor">|</span>`;
+
+// ===== LETTER-BY-LETTER TYPING (HTML SAFE) =====
+let i = 0;
+let output = "";
+let lineNumber = 1;
+let firstLine = true;
+
+function typeCodeLetters() {
+  if (i >= codeHTML.length) {
+    typeCommand();
+    return;
+  }
+
+  // Inject line number at start of each line
+  if (firstLine) {
+    output += `<span class="line-num">${lineNumber}   </span>`;
+    firstLine = false;
+  }
+
+  // Handle HTML tags instantly
+  if (codeHTML[i] === "<") {
+    const close = codeHTML.indexOf(">", i);
+    output += codeHTML.slice(i, close + 1);
+    i = close + 1;
+  } else {
+    const ch = codeHTML[i];
+    output += ch;
+    i++;
+
+    if (ch === "\n") {
+      lineNumber++;
+      output += `<span class="line-num">${lineNumber}   </span>`;
+    }
+  }
+
+  codeTarget.innerHTML = `${output}<span class="cursor">|</span>`;
+  setTimeout(typeCodeLetters, 15);
+}
+
+setTimeout(typeCodeLetters, 600);
+
+// ===== TERMINAL TYPING =====
+function escapeHtml(s){
+  return s
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+}
+
+function typeCommand() {
+  let j = 0;
+  const prompt = "> ";
+
+  function step() {
+    if (j <= cmdText.length) {
+      const typed = cmdText.slice(0, j);
+      termTarget.innerHTML = `${prompt}${escapeHtml(typed)}<span class="cursor">|</span>`;
+      j++;
+      setTimeout(step, 24);
+    } else {
+      termTarget.innerHTML =
+        `> py portfolio.py ` +
+        `<a href="#about" class="scroll-link bounce-flag">--scroll-to-view ↓↓↓</a>` +
+        `<span class="cursor">|</span>`;
+    }
+  }
+
+  setTimeout(step, 400);
+}
+
+// ===== START =====
+setTimeout(typeCodeLetters, 600);
+</script>
+</body>
+
+
+</html>

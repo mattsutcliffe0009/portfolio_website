@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Distortion Pedal · Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='dist/output.css') }}">
+</head>
+
+<body class="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-900">
+  <header class="border-b border-slate-200/70 bg-white/75 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-6 py-4">
+      <a href="{{ url_for('home') }}#portfolio" class="text-sm font-medium text-slate-700 hover:text-slate-900">
+        ← Back to portfolio
+      </a>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-6 py-14 space-y-16">
+    <!-- HERO -->
+    <section class="grid gap-10 lg:grid-cols-2 items-center">
+      <div>
+        <p class="text-sm font-medium text-slate-500">Electronics · PCB · Enclosure</p>
+        <h1 class="mt-2 text-4xl font-semibold tracking-tight">Distortion Pedal</h1>
+        <p class="mt-4 text-lg text-slate-600">
+          Custom distortion pedal: circuit design, PCB layout, and enclosure.
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-2">
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Circuit Design</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">PCB</span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">EasyEDA</span>
+        </div>
+      </div>
+
+      <img
+        src="{{ url_for('static', filename='images/distortion_pedal/pcb.png') }}"
+        class="w-full rounded-2xl border border-slate-200 object-cover"
+        alt="Distortion pedal PCB"
+      >
+    </section>
+
+    <!-- BUILD OVERVIEW -->
+    <section class="grid gap-6 lg:grid-cols-3">
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="font-semibold">Goal</h2>
+        <p class="mt-2 text-sm text-slate-600">What tone/feature set you were targeting.</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="font-semibold">Design</h2>
+        <p class="mt-2 text-sm text-slate-600">Op-amp/clipping approach, filtering, gain staging.</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="font-semibold">Outcome</h2>
+        <p class="mt-2 text-sm text-slate-600">Working prototype + final PCB + enclosure.</p>
+      </div>
+    </section>
+
+    <!-- GALLERY (add more images when you have them) -->
+    <section>
+      <h2 class="text-2xl font-semibold">Gallery</h2>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <img class="w-full rounded-xl border border-slate-200 object-cover"
+             src="{{ url_for('static', filename='images/distortion_pedal/pcb.png') }}"
+             alt="PCB">
+      </div>
+    </section>
+  </main>
+</body>
+</html>
