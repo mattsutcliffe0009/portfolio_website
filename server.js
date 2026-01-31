@@ -3,10 +3,7 @@ const path = require("path");
 
 const app = express();
 
-// Serve HTML files (and anything else you put in public/)
 app.use(express.static(path.join(__dirname, "public")));
-
-// Serve your Tailwind build output + images (your "static/" folder)
 app.use("/static", express.static(path.join(__dirname, "static")));
 
 // routes...

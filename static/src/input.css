@@ -144,6 +144,9 @@
   align-items: start;
 }
 
+
+
+
 .hero-lines{
   color: rgba(148,163,184,.65);
   user-select: none;
@@ -164,4 +167,24 @@ color: rgba(148,163,184,.35); /* low opacity */
 user-select: none;
 }
 
-/* sliding neon */
+@media (max-width: 640px) {
+  .hero-code,
+  .hero-terminal {
+    font-size: 0.55rem;
+  
+  }
+  header > div {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+
+  #nav {
+    gap: 0.2rem;
+  }
+
+  .nav-link {
+    padding: 0.25rem 0.45rem;
+    font-size: 0.75rem;
+  }
+}
+
