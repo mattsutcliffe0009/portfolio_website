@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Under Construction</title>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background: #000;
+      display: grid;
+      place-items: center;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .container {
+      position: relative;
+      text-align: center;
+    }
+
+    img {
+      max-width: 60vw;
+      max-height: 60vh;
+      object-fit: contain;
+    }
+
+    /* ⚠️ Warning box */
+    .warning {
+      position: absolute;
+      top: -3.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.75rem 1.25rem;
+      border-radius: 12px;
+      background: rgba(245, 158, 11, 0.95); /* amber-500 */
+      color: #111;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      white-space: nowrap;
+    }
+
+    /* Go back button */
+    .back {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.75rem 1.25rem;
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      background: rgba(0,0,0,.6);
+      backdrop-filter: blur(6px);
+    }
+
+    .back:hover {
+      background: rgba(0,0,0,.85);
+    }
+
+    /* Mobile tuning */
+    @media (max-width: 640px) {
+      img {
+        max-width: 85vw;
+        max-height: 55vh;
+      }
+      .warning {
+        top: -3rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="warning">⚠ Under Construction<br>
+    More to come</div>
+
+    <img
+      src="/static/images/construction/tenor.gif"
+      alt="Under construction"
+    >
+  </div>
+
+  <a class="back" href="javascript:history.back()">← Go back</a>
+
+</body>
+</html>
