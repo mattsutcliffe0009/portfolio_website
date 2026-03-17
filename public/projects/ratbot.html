@@ -1,69 +1,336 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ratbot · Portfolio</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='dist/output.css') }}">
+  <title>Ratbot · Matthew Sutcliffe</title>
+
+  <link rel="stylesheet" href="/static/dist/output.css?v=228" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #475569; /* slate-600 */
+      transition: color 0.2s ease;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      color: #0f172a; /* slate-900 */
+    }
+    
+  </style>
 </head>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <body class="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-900">
-
-  <header class="border-b border-slate-200/70 bg-white/75 backdrop-blur">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur">
     <div class="mx-auto max-w-6xl px-6 py-4">
-      <a href="{{ url_for('home') }}#portfolio"
-         class="text-sm font-medium text-slate-700 hover:text-slate-900">
+      <a
+        href="/#portfolio"
+        class="text-sm font-bold text-slate-600 transition hover:text-slate-900"
+      >
         ← Back to portfolio
       </a>
     </div>
   </header>
 
-  <main class="mx-auto max-w-6xl px-6 py-14 space-y-16">
+<section class="border-b border-slate-200 bg-gradient-to-b from-gray-900 to-slate-950 text-white">
+  <div class="mx-auto max-w-6xl px-6 py-20 grid gap-10 lg:grid-cols-2 items-center">
 
-    <!-- HERO -->
-    <section class="grid gap-10 lg:grid-cols-2 items-center">
-      <div>
-        <h1 class="text-4xl font-semibold tracking-tight">Ratbot</h1>
-        <p class="mt-4 text-lg text-slate-600">
-          A low-cost tracked robot for remote wildlife observation.
+    <!-- LEFT: TEXT -->
+    <div>
+      <p class="text-sm uppercase tracking-[0.2em] text-slate-300">
+        Robotics Project
+      </p>
+
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+        Ratbot
+      </h1>
+
+      <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
+        A low-cost tracked mobile robot for unobtrusive wildlife monitoring, capable of navigating complex terrain while capturing and transmitting real-time visual and audio data. The system features client end vision-based classification, enabling automated detection and identification of wildlife in natural environments.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-2">
+        <span class="rounded-full bg-white/10 px-3 py-1 text-sm text-slate-200">Python</span>
+        <span class="rounded-full bg-white/10 px-3 py-1 text-sm text-slate-200">CAD (Solidworks)</span>
+        <span class="rounded-full bg-white/10 px-3 py-1 text-sm text-slate-200">E-CAD (KiCAD)</span>
+        <span class="rounded-full bg-white/10 px-3 py-1 text-sm text-slate-200">Computer Networking</span>
+        <span class="rounded-full bg-white/10 px-3 py-1 text-sm text-slate-200">Raspberry Pi</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: IMAGE -->
+    <div class="flex justify-center lg:justify-end">
+      <img
+        src="/static/images/ratbot/ratbot_1.png?v=1"
+        alt="Ratbot robot"
+        class="w-full max-w-md rounded-2xl"
+      />
+    </div>
+
+  </div>
+</section>
+
+  <main class="mx-auto max-w-6xl px-6 py-16">
+    <!-- Main image -->
+
+    <!-- Overview -->
+    <section class="mt-16 grid gap-10 lg:grid-cols-3">
+      <div class="lg:col-span-2">
+        <h2 class="text-3xl font-semibold tracking-tight">Overview</h2>
+
+        <p class="mt-4 leading-relaxed text-slate-600">
+          Ratbot was developed as a low-cost, sustainable mobile robot for remote wildlife observation.
+          The aim of the project was to create a platform that could move across flat, sloped, and mountainous
+          terrain while remaining visually unobtrusive to animals in the environment.
+        </p>
+
+        <p class="mt-4 leading-relaxed text-slate-600">
+          The robot was remotely controlled and equipped with a three-degree-of-freedom camera arm and onboard
+          processing for real-time visual and audio capture, which enables automated detection and identification of wildlife on the client end.
+          Its camouflaged exterior helped reduce disturbance to wildlife, while the tracked drive system provided the mobility needed for challenging terrain.
+        </p>
+
+        <p class="mt-4 leading-relaxed text-slate-600">
+          The final result was a successful proof-of-concept robotic platform for remote ecological monitoring
+          that was able to traverse all assessed terrains, including the most difficult terrain tested. 
         </p>
       </div>
 
-      <img
-        src="{{ url_for('static', filename='images/ratbot/ratbot_1.png') }}"
-        class="w-full rounded-2xl border border-slate-200 object-cover"
-        alt="Ratbot"
-      >
-    </section>
+      <aside class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h3 class="font-semibold text-slate-900">Project Details</h3>
 
-    <!-- PROBLEM -->
-    <section>
-      <h2 class="text-2xl font-semibold">Problem</h2>
-      <p class="mt-3 text-slate-600 max-w-3xl">
-        Wildlife monitoring systems are expensive, intrusive, and difficult to deploy at scale…
-      </p>
-    </section>
+        <dl class="mt-4 space-y-4 text-sm text-slate-600">
+          <div>
+            <dt class="font-medium text-slate-900">Project Type</dt>
+            <dd>Team robotics project</dd>
+          </div>
 
-    <!-- SOLUTION -->
-    <section>
-      <h2 class="text-2xl font-semibold">Solution</h2>
-      <ul class="mt-4 list-disc pl-6 text-slate-600 space-y-2">
-        <li>Tracked chassis for rough terrain</li>
-        <li>Low-power onboard compute</li>
-        <li>Remote audio/video streaming</li>
-      </ul>
-    </section>
+          <div>
+            <dt class="font-medium text-slate-900">Platform</dt>
+            <dd>Tracked mobile robot</dd>
+          </div>
 
-    <!-- TECH STACK -->
-    <section>
-      <h2 class="text-2xl font-semibold">Technology</h2>
-      <div class="mt-4 flex flex-wrap gap-3">
-        <span class="rounded-full bg-slate-100 px-4 py-1 text-sm">Python</span>
-        <span class="rounded-full bg-slate-100 px-4 py-1 text-sm">SolidWorks</span>
-        <span class="rounded-full bg-slate-100 px-4 py-1 text-sm">Raspberry Pi</span>
+          <div>
+            <dt class="font-medium text-slate-900">Focus</dt>
+            <dd>Mobility, sensing, control, and system integration</dd>
+          </div>
+
+          <div>
+            <dt class="font-medium text-slate-900">Outcome</dt>
+            <dd>Proof-of-concept platform for ecological monitoring</dd>
+          </div>
+        </dl>
+      </aside>
+    </section>
+<section class="mt-16">
+  <h2 class="text-3xl font-semibold tracking-tight">Gallery</h2>
+
+  <div class="flex items-center gap-4 mt-8 max-w-5xl mx-auto">
+
+    <!-- LEFT ARROW -->
+    <button
+      class="gallery-prev text-slate-600 text-4xl transition hover:text-slate-900"
+    >
+      ←
+    </button>
+
+    <!-- CAROUSEL -->
+    <div class="swiper w-full">
+
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <img src="/static/images/ratbot/ratbot_1.png?v=1"
+          class="rounded-xl border border-slate-200 object-cover w-full">
+        </div>
+
+        <div class="swiper-slide">
+          <img src="/static/images/ratbot/ratbot_2.png?v=1"
+          class="rounded-xl border border-slate-200 object-cover w-full">
+        </div>
+
+        <div class="swiper-slide">
+          <img src="/static/images/ratbot/ratbot_3.jpg?v=1"
+          class="rounded-xl border border-slate-200 object-cover w-full">
+        </div>
+
+        <div class="swiper-slide">
+          <img src="/static/images/ratbot/ratbot_4.jpg?v=1"
+          class="rounded-xl border border-slate-200 object-cover w-full">
+        </div>
+
+        <div class="swiper-slide">
+          <img src="/static/images/ratbot/ratbot_circuit.png?v=1"
+          class="rounded-xl border border-slate-200 object-cover w-full">
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT ARROW -->
+    <button
+      class="gallery-next text-slate-600 text-4xl transition hover:text-slate-900"
+    >
+      →
+    </button>
+
+  </div>
+</section>
+
+
+<!-- Contributions -->
+    <section class="mt-16">
+      <h2 class="text-3xl font-semibold tracking-tight">My Contributions</h2>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold text-slate-900">Mechanical Design</h3>
+          <p class="mt-3 leading-relaxed text-slate-600">
+            I was responsible for the design, 3D modelling, printing, and assembly of the robot's chassis, tracks and drivetrain, as well as the chassis and sensor payload interface.
+          </p>
+        </article>
+
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold text-slate-900">Electrical Integration</h3>
+          <p class="mt-3 leading-relaxed text-slate-600">
+            I built the electrical power-distribution system and was responsible for the selection and integration of the motors, onboard electronics, and control hardware (motor drivers and Raspberry Pi).
+          </p>
+        </article>
+
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold text-slate-900">Embedded Setup</h3>
+          <p class="mt-3 leading-relaxed text-slate-600">
+            I configured the Raspberry Pi and established the software and hardware environment required for robot operation and remote functionality.
+          </p>
+        </article>
+
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold text-slate-900">Control and Networking</h3>
+          <p class="mt-3 leading-relaxed text-slate-600">
+            I set up the networking and control systems and developed PD motor controllers in Python for smoother and more stable speed regulation, as well as the robot's control software.
+          </p>
+        </article>
+
       </div>
     </section>
 
+    <!-- Features -->
+    <section class="mt-16">
+      <h2 class="text-3xl font-semibold tracking-tight">System Features</h2>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <ul class="space-y-3 text-slate-600">
+            <li>Tracked drive system for multi-terrain mobility</li>
+            <li>Three-DoF camera arm</li>
+            <li>Onboard Raspberry Pi processing</li>
+            <li>Remote control over a networked connection</li>
+          </ul>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <ul class="space-y-3 text-slate-600">
+            <li>Real-time visual and audio data capture and classification of animals</li>
+            <li>Camouflaged design for unobtrusive observation</li>
+            <li>Integrated electrical and embedded systems</li>
+            <li>Validated across flat, sloped and uneven mountainous terrain</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Technical skills -->
+    <section class="mt-16">
+      <h2 class="text-3xl font-semibold tracking-tight">Technical Skills</h2>
+
+      <div class="mt-8 flex flex-wrap gap-2">
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Mechanical Design</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">CAD Modelling (Solidworks)</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Mechanical Prototyping</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Electronic Design</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Electronic CAD (KiCAD)</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Electronics Integration</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Raspberry Pi Configuration</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Wi-Fi / LAN Networking</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">PD Control</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Python</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Sensor Integration</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">System Integration</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Soldering</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">3D Printing</span>
+      </div>
+    </section>
+
+    <!-- Team skills -->
+    <section class="mt-12">
+      <h2 class="text-3xl font-semibold tracking-tight">Project and Team Skills</h2>
+
+      <div class="mt-8 flex flex-wrap gap-2">
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Cross-disciplinary Collaboration</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Problem Solving</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Mechanical, Electrical, and Software Integration</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Rapid Prototyping</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Iterative Testing</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Documentation</span>
+        <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">Technical Communication</span>
+      </div>
+    </section>
   </main>
+
+  <footer class="border-t border-slate-200/70 py-10 text-center text-sm text-slate-500">
+    <span id="year"></span> Matthew Sutcliffe
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+<script>
+new Swiper(".swiper", {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  loop: true,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints: {
+    640: { slidesPerView: 1 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
+  }
+});
+</script>
+
+<script>
+new Swiper(".swiper", {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  loop: true,
+
+  navigation: {
+    nextEl: ".gallery-next",
+    prevEl: ".gallery-prev",
+  },
+
+  breakpoints: {
+    640: { slidesPerView: 1 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
+  }
+});
+</script>
 </body>
 </html>
