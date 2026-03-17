@@ -254,20 +254,19 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 <script>
 new Swiper(".swiper", {
-slidesPerView:3,
-spaceBetween:20,
-loop:true,
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
 
-navigation:{
-nextEl:".gallery-next",
-prevEl:".gallery-prev",
-},
+  navigation: {
+    nextEl: ".gallery-next",
+    prevEl: ".gallery-prev",
+  },
 
-breakpoints:{
-640:{slidesPerView:1},
-768:{slidesPerView:2},
-1024:{slidesPerView:3}
-}
+  breakpoints: {
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
+  }
 });
 </script>
 

@@ -312,21 +312,22 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
-  <script>
-    new Swiper(".swiper", {
-      slidesPerView: 3,
-      spaceBetween: 20,
-      loop: true,
-      navigation: {
-        nextEl: ".gallery-next",
-        prevEl: ".gallery-prev",
-      },
-      breakpoints: {
-        640: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 }
-      }
-    });
-  </script>
+<script>
+new Swiper(".swiper", {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+
+  navigation: {
+    nextEl: ".gallery-next",
+    prevEl: ".gallery-prev",
+  },
+
+  breakpoints: {
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
+  }
+});
+</script>
 </body>
 </html>
